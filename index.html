@@ -34,21 +34,21 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript">
 
-    $("button").on("click",function(){
+    // $("button").on("click",function(){
 
       var music = ["Frank Ocean", "David Bowie", "Pink Floyd", "Wu-Tang Clan"];
 
-      var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-        music + "&api_key=K161h2ecDScI47uy6JmYQspZ2CwK3TnS";
-
-      $.ajax({
-        url: queryURL,
-        method: "GET"
-      })
-
-      .done(function(response){
-
-      }
+      // var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
+      //   music + "&api_key=K161h2ecDScI47uy6JmYQspZ2CwK3TnS";
+      //
+      // $.ajax({
+      //   url: queryURL,
+      //   method: "GET"
+      // })
+      //
+      // .done(function(response){
+      //
+      // }
 
       function renderButtons() {
 
@@ -78,9 +78,9 @@
         event.preventDefault();
 
         // This line will grab the text from the input box
-        var music = $("#music-input").val().trim();
+        var group = $("#music-input").val().trim();
         // The movie from the textbox is then added to our array
-        movies.push(music);
+        music.push(group);
 
         // calling renderButtons which handles the processing of our movie array
         renderButtons();
@@ -89,7 +89,7 @@
       // Calling the renderButtons function at least once to display the initial list of movies
       renderButtons();
 
-
+      
 
     </script>
   </div>
