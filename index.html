@@ -1,98 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <title>Favorite Movies</title>
-  <style type="text/css">
-    button,
-    div,
-    form,
-    input {
-      margin: 10px;
-    }
-  </style>
+    <title>Music Giphy</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 
 <body>
-
-
-  <div class="container">
-    <h1>Music Giphy</h1>
-
-    <!-- Movies will get dumped here -->
-    <div id="music-view"></div>
-
-    <form id="music-form">
-      <label for="music-input">Add a musical group</label>
-      <input type="text" id="music-input"><br>
-
-      <!-- Button triggers new movie to be added -->
-      <input id="add-music" type="submit" value="Add a musical group">
-    </form>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript">
-
-    // $("button").on("click",function(){
-
-      var music = ["Frank Ocean", "David Bowie", "Pink Floyd", "Wu-Tang Clan"];
-
-      // var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-      //   music + "&api_key=K161h2ecDScI47uy6JmYQspZ2CwK3TnS";
-      //
-      // $.ajax({
-      //   url: queryURL,
-      //   method: "GET"
-      // })
-      //
-      // .done(function(response){
-      //
-      // }
-
-      function renderButtons() {
-
-        $("#music-view").empty();
-
-        // Looping through the array of movies
-        for (var i = 0; i < music.length; i++) {
-
-          // Then dynamicaly generating buttons for each movie in the array.
-          // This code $("<button>") is all jQuery needs to create the start and end tag. (<button></button>)
-          var a = $("<button>");
-          // Adding a class
-          a.addClass("music");
-          // Adding a data-attribute with a value of the movie at index i
-          a.attr("data-name", music[i]);
-          // Providing the button's text with a value of the movie at index i
-          a.text(music[i]);
-          // Adding the button to the HTML
-          $("#music-view").append(a);
-        }
-      }
-
-      // This function handles events where one button is clicked
-      $("#add-music").on("click", function(event) {
-        // event.preventDefault() prevents the form from trying to submit itself.
-        // We're using a form so that the user can hit enter instead of clicking the button if they want
-        event.preventDefault();
-
-        // This line will grab the text from the input box
-        var group = $("#music-input").val().trim();
-        // The movie from the textbox is then added to our array
-        music.push(group);
-
-        // calling renderButtons which handles the processing of our movie array
-        renderButtons();
-      });
-
-      // Calling the renderButtons function at least once to display the initial list of movies
-      renderButtons();
-
-      
-
-    </script>
-  </div>
+    <div class='container'>
+        <div class='row'>
+            <div id='musicButtons'></div>
+        </div>
+        <div class='row'>
+            <div class='col-lg-9'>
+                <div class='display'></div>
+            </div>
+            <div class='col-lg-3'>
+                <form id='Music-form'>
+                    <label for='newMusicInput'>Add Music</label>
+                    <input type='text' id='newMusicInput'>
+                    <br>
+                    <input id='addMusic' type='submit' value='Submit'>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script type="text/javascript" src="assets/javascript.js"></script>
 </body>
 
 </html>
